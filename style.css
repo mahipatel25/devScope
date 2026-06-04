@@ -2386,3 +2386,17 @@ html, body {
         text-align: center !important;
     }
 }
+
+/* -------------------------------------------------------------
+ * STATE VISIBILITY OVERRIDES
+ * ------------------------------------------------------------- */
+/* Ensures elements marked with .hidden are completely removed from layout,
+   overriding any mobile media queries that set display: flex or grid !important */
+.hidden, 
+section.hidden, 
+div.hidden,
+article.hidden,
+aside.hidden,
+[id].hidden {
+    display: none !important;
+}
