@@ -82,6 +82,13 @@ html[data-theme="light"] {
     padding: 0;
 }
 
+
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
 body {
     font-family: var(--font-primary);
     background-color: var(--bg-primary);
@@ -2176,98 +2183,199 @@ html[data-theme="light"] .theme-toggle .sun-icon {
 }
 
 
+
 /* -------------------------------------------------------------
- * EXTENDED RESPONSIVE FIXES
+ * COMPREHENSIVE RESPONSIVE DESIGN (MOBILE & TABLET)
  * ------------------------------------------------------------- */
-/* Global flex-wrap for containers */
-.history-chips, .favorites-chips, .suggest-chips, .stats-grid, .repos-controls-bar, .controls-selects {
-    flex-wrap: wrap !important;
+/* Fix global box sizing and overflow to prevent Safari/iPhone issues */
+*, *::before, *::after {
+    box-sizing: border-box !important;
 }
 
-/* Ensure no elements overflow */
+html, body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+    position: relative;
+}
+
+/* Prevent text overflow on all specific text containers */
+.repo-name, .repo-title, .repo-desc, .profile-name, .profile-bio, .profile-login, 
+.hero-title, .hero-subtitle, p, h1, h2, h3, h4, h5, h6, span, a, .chip-name {
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+    white-space: normal !important;
+}
+
+/* Prevent any element from exceeding viewport width */
 * {
     max-width: 100%;
 }
 
-@media (max-width: 768px) {
-    /* Stack filter controls vertically */
-    .repos-controls-bar {
+/* Flex wrap for all lists/chips */
+.history-chips, .favorites-chips, .suggest-chips, .stats-grid, .repos-controls-bar, .controls-selects {
+    flex-wrap: wrap !important;
+}
+
+/* Media Queries for Tablet & Small Desktop */
+@media (max-width: 992px) {
+    .results-layout {
+        display: flex !important;
         flex-direction: column !important;
-        align-items: stretch !important;
     }
-    
-    .controls-selects {
-        flex-direction: column !important;
-        width: 100% !important;
-        gap: 1rem !important;
-    }
-    
-    .filter-controls-wrapper, .sort-controls-wrapper {
-        width: 100% !important;
-        flex-direction: column !important;
-        align-items: stretch !important;
-    }
-    
-    .repo-search-wrapper {
+    .profile-sidebar-wrapper, .repos-main-wrapper {
         width: 100% !important;
         max-width: 100% !important;
     }
-    
+}
+
+/* Media Queries for Mobile (<= 768px) */
+@media (max-width: 768px) {
+    /* Main Layout */
+    .main-content {
+        padding: 1.5rem 1rem !important;
+    }
+    .content-container {
+        gap: 2rem !important;
+    }
+
+    /* Hero & Search */
+    .hero-title {
+        font-size: 1.8rem !important;
+    }
     .search-wrapper, .search-form {
         width: 100% !important;
+        max-width: 100% !important;
     }
-    
+    .search-form {
+        padding: 0.5rem !important;
+        flex-wrap: wrap !important;
+    }
     .input-icon-wrapper {
         width: 100% !important;
     }
-    
-    .search-form {
-        flex-wrap: wrap !important;
-    }
-    
     .search-btn {
         width: 100% !important;
         justify-content: center !important;
         margin-top: 0.5rem !important;
     }
 
-    /* Cards use 100% width */
+    /* Repo Cards & Controls */
+    .repos-controls-bar {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        width: 100% !important;
+        padding: 0 !important;
+    }
+    .controls-selects {
+        flex-direction: column !important;
+        width: 100% !important;
+        gap: 1rem !important;
+    }
+    .filter-controls-wrapper, .sort-controls-wrapper {
+        width: 100% !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+    }
+    .select-glow-wrapper, .sort-select {
+        width: 100% !important;
+    }
+    .repo-search-wrapper {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+    }
+
+    /* Ensure Repos Stack in One Column */
+    .repos-grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+        width: 100% !important;
+    }
     .repo-card {
         width: 100% !important;
+        margin: 0 !important;
     }
-    
-    .repos-grid {
-        grid-template-columns: 1fr !important;
-    }
-    
-    /* Allow heatmap to scroll internally to avoid page overflow */
+
+    /* Heatmap Overflow Fix */
     .heatmap-wrapper {
-        overflow-x: auto !important;
         width: 100% !important;
+        min-width: 0 !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important; /* Safari smooth scroll */
+    }
+
+    /* Status/Empty/Error Panels */
+    .empty-state-card, .error-card {
+        padding: 2rem 1rem !important;
+        width: 100% !important;
+        max-width: 100% !important;
     }
 }
 
+/* Media Queries for Small Mobile (<= 480px) */
 @media (max-width: 480px) {
+    /* Navbar */
     .nav-container {
         flex-direction: column !important;
         gap: 1rem !important;
+        padding: 1rem !important;
     }
     
+    /* Typography */
     .hero-title {
         font-size: 1.5rem !important;
     }
-    
-    .empty-state-card, .error-card {
+    .hero-subtitle {
+        font-size: 0.9rem !important;
+    }
+
+    /* Profile Card */
+    .profile-card {
         padding: 1.5rem 1rem !important;
+        width: 100% !important;
     }
     
+    /* Reduce Avatar Size on Mobile */
+    .profile-avatar-wrapper {
+        width: 120px !important;
+        height: 120px !important;
+    }
+    .avatar-img {
+        width: 120px !important;
+        height: 120px !important;
+    }
+
+    /* Stats Grid */
     .stats-grid {
         grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+    .stat-item {
+        padding: 1rem !important;
+    }
+
+    /* History & Suggestion Chips */
+    .history-chip, .favorite-chip, .suggest-chip-btn {
+        width: 100% !important;
+        justify-content: center !important;
+        text-align: center !important;
+    }
+    .chip-name {
+        max-width: none !important;
     }
     
-    /* Cards use 100% width */
-    .profile-sidebar-wrapper, .repos-main-wrapper, .contribution-card, .stats-card {
+    /* Cards use 100% width and reduce padding */
+    .contribution-card, .stats-card, .repos-main-wrapper {
         width: 100% !important;
         padding: 1rem !important;
+    }
+    
+    /* Footer */
+    .app-footer {
+        padding: 1rem !important;
+        text-align: center !important;
     }
 }
