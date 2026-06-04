@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevScope — Premium GitHub Profile Finder</title>
+    
+    <!-- Meta tags for premium SEO indexing -->
+    <meta name="description" content="Discover, search, and analyze GitHub developer profiles in a premium futuristic interface. Features repositories lists, stats, history tracking, and beautiful dark/light themes.">
+    <meta name="keywords" content="GitHub, Profile Finder, DevScope, Dev Scope, Developer Search, Git Finder, Developer Profile, Cyberpunk UI">
+    <meta name="author" content="Antigravity Team">
+    
+    <!-- Google Fonts: Plus Jakarta Sans for premium futuristic typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome CDN for modern vector icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Core Application Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Glow Background Effects -->
+    <div class="blob-glow-1"></div>
+    <div class="blob-glow-2"></div>
+    <div class="blob-glow-3"></div>
+
+    <!-- Premium Navigation Bar -->
+    <nav class="navbar" id="app-navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo" id="nav-logo">
+                <i class="fa-brands fa-github logo-icon"></i>
+                <span class="logo-text">Dev<span class="logo-accent">Scope</span></span>
+            </a>
+            
+            <div class="nav-actions">
+                <!-- Theme Toggle Button -->
+                <button class="theme-toggle" id="theme-toggle-btn" aria-label="Toggle visual theme" title="Toggle theme">
+                    <span class="toggle-icon-container">
+                        <!-- Modern SVG Moon Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="moon-icon">
+                            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+                        </svg>
+                        <!-- Modern SVG Sun Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="sun-icon">
+                            <circle cx="12" cy="12" r="4"></circle>
+                            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+                        </svg>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Workspace Container -->
+    <main class="main-content">
+        <div class="content-container">
+            
+            <!-- Hero Header & Search Section -->
+            <section class="search-section">
+                <div class="hero-header">
+                    <h1 class="hero-title">Decode GitHub Profiles</h1>
+                    <p class="hero-subtitle">Step into the developer scope. <span id="typing-text"></span><span class="typing-cursor">|</span></p>
+                </div>
+                
+                <!-- Animated Glowing Search Container -->
+                <div class="search-wrapper">
+                    <div class="search-bar-glow"></div>
+                    <form class="search-form" id="search-form" autocomplete="off">
+                        <div class="input-icon-wrapper">
+                            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                            <input 
+                                type="text" 
+                                id="search-input" 
+                                placeholder="Search GitHub username..." 
+                                required
+                                aria-label="GitHub username to search"
+                            >
+                        </div>
+                        <button type="submit" class="search-btn" id="search-btn">
+                            <span class="btn-text">Scope</span>
+                            <i class="fa-solid fa-arrow-right btn-arrow"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Active Search History Chips -->
+                <div class="history-container hidden" id="history-container">
+                    <div class="history-header">
+                        <span class="history-label"><i class="fa-solid fa-clock-rotate-left"></i> Recent Queries</span>
+                        <button class="clear-history-btn" id="clear-history-btn" type="button">Clear History</button>
+                    </div>
+                    <div class="history-chips" id="history-chips-list">
+                        <!-- Caching chips generated dynamically in script.js -->
+                    </div>
+                </div>
+
+                <!-- Bookmarked Favorites Section -->
+                <div class="favorites-container hidden" id="favorites-container">
+                    <div class="favorites-header">
+                        <span class="favorites-label"><i class="fa-solid fa-star"></i> Bookmarked Profiles</span>
+                        <span class="favorites-count-badge" id="favorites-count">0</span>
+                    </div>
+                    <div class="favorites-chips" id="favorites-chips-list">
+                        <!-- Favorites generated dynamically in script.js -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Status Container: Skeletons, Errors & Empty States -->
+            <section class="status-section">
+                <!-- 1. EMPTY STATE PANEL -->
+                <div class="empty-state-card" id="empty-state-panel">
+                    <div class="empty-icon-wrapper">
+                        🔭
+                    </div>
+                    <h2 class="empty-title">Scope Unactive</h2>
+                    <p class="empty-desc">Enter a GitHub developer's handle above to initiate scanning and pull real-time server records.</p>
+                    <div class="suggestions-box">
+                        <span class="suggest-title">Try searching:</span>
+                        <div class="suggest-chips">
+                            <button type="button" class="suggest-chip-btn">torvalds</button>
+                            <button type="button" class="suggest-chip-btn">gaearon</button>
+                            <button type="button" class="suggest-chip-btn">yyx990803</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. LOADING SKELETON PANEL -->
+                <div class="skeleton-wrapper hidden" id="skeleton-loader">
+                    <div class="profile-skeleton-card">
+                        <div class="sk-avatar-box">
+                            <div class="skeleton skeleton-avatar"></div>
+                            <div class="skeleton skeleton-title"></div>
+                            <div class="skeleton skeleton-subtitle"></div>
+                        </div>
+                        <div class="sk-bio">
+                            <div class="skeleton skeleton-text"></div>
+                            <div class="skeleton skeleton-text short"></div>
+                        </div>
+                        <div class="sk-stats">
+                            <div class="skeleton skeleton-stat"></div>
+                            <div class="skeleton skeleton-stat"></div>
+                            <div class="skeleton skeleton-stat"></div>
+                        </div>
+                        <div class="sk-details">
+                            <div class="skeleton skeleton-detail"></div>
+                            <div class="skeleton skeleton-detail"></div>
+                            <div class="skeleton skeleton-detail"></div>
+                        </div>
+                    </div>
+                    <div class="repos-skeleton-panel">
+                        <div class="sk-repos-title">
+                            <div class="skeleton skeleton-subtitle"></div>
+                        </div>
+                        <div class="sk-repos-grid">
+                            <div class="skeleton skeleton-repo-card"></div>
+                            <div class="skeleton skeleton-repo-card"></div>
+                            <div class="skeleton skeleton-repo-card"></div>
+                            <div class="skeleton skeleton-repo-card"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. PREMIUM CYBER GLITCH ERROR PANEL -->
+                <div class="error-card-wrapper hidden" id="error-panel">
+                    <div class="error-glow"></div>
+                    <div class="error-card">
+                        <div class="error-glitch-icon">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                        </div>
+                        <h2 class="error-title" id="error-headline">System Disruption</h2>
+                        <p class="error-message" id="error-message-text">Developer vanished into the void.</p>
+                        <p class="error-details-sub" id="error-details-subtext">The requested user node does not exist or has been privatized.</p>
+                        <button type="button" class="error-action-btn" id="error-retry-btn">
+                            <i class="fa-solid fa-arrows-rotate"></i> Reload System
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Profile & Repositories Display Panel (Dynamically populated) -->
+            <section class="results-layout hidden" id="results-panel">
+                
+                <!-- Left Column: User Profile Insights & Statistics -->
+                <aside class="profile-sidebar-wrapper">
+                    <!-- Profile Card -->
+                    <div id="profile-container">
+                        <!-- Loaded dynamically via script.js -->
+                    </div>
+
+                    <!-- Statistics Section -->
+                    <div class="stats-card" id="stats-container">
+                        <!-- Loaded dynamically via script.js -->
+                    </div>
+                </aside>
+
+                <!-- Right Column: Contribution Grid & Repositories List -->
+                <article class="repos-main-wrapper">
+                    <!-- Contribution Heatmap Section -->
+                    <div class="contribution-card" id="contribution-container">
+                        <!-- Loaded dynamically via script.js -->
+                    </div>
+
+                    <!-- Repository Grid Header & Controls -->
+                    <div class="repos-header-bar">
+                        <h2 class="section-title">
+                            <i class="fa-solid fa-code-branch section-icon"></i>
+                            Featured Repositories
+                        </h2>
+                        
+                        <!-- Search, Filter & Sorting Panel controls -->
+                        <div class="repos-controls-bar">
+                            <!-- Real-time Repo Search -->
+                            <div class="repo-search-wrapper">
+                                <input type="text" id="repo-search-input" placeholder="Search repositories..." aria-label="Search repositories">
+                                <i class="fa-solid fa-magnifying-glass repo-search-icon"></i>
+                            </div>
+
+                            <div class="controls-selects">
+                                <!-- Language filter dropdown -->
+                                <div class="filter-controls-wrapper">
+                                    <label for="repo-lang-select" class="sort-label"><i class="fa-solid fa-filter"></i> Lang:</label>
+                                    <div class="select-glow-wrapper">
+                                        <select id="repo-lang-select" class="sort-select" aria-label="Filter repositories by language">
+                                            <option value="all" selected>All Languages</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <!-- Sorting Selector -->
+                                <div class="sort-controls-wrapper">
+                                    <label for="repo-sort-select" class="sort-label"><i class="fa-solid fa-arrow-down-wide-short"></i> Sort:</label>
+                                    <div class="select-glow-wrapper">
+                                        <select id="repo-sort-select" class="sort-select" aria-label="Sort repositories by">
+                                            <option value="stars" selected>Most Starred</option>
+                                            <option value="newest">Newest</option>
+                                            <option value="oldest">Oldest</option>
+                                            <option value="forks">Forks (High to Low)</option>
+                                            <option value="name">Name (A-Z)</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Repos Grid -->
+                    <div class="repos-grid" id="repos-cards-grid">
+                        <!-- Loaded dynamically via script.js -->
+                    </div>
+                </article>
+
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+        <p>&copy; 2026 DevScope. Powered by <a href="https://docs.github.com/en/rest" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> GitHub API</a>.</p>
+    </footer>
+
+    <!-- Core Script Logic -->
+    <script src="script.js"></script>
+</body>
+</html>
