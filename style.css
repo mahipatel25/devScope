@@ -84,7 +84,6 @@ html[data-theme="light"] {
 
 
 html, body {
-    overflow-x: hidden;
     width: 100%;
     margin: 0;
     padding: 0;
@@ -96,7 +95,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    overflow-x: hidden;
+    overflow-x: clip;
     position: relative;
     line-height: 1.6;
     transition: background-color 0.5s ease, color 0.3s ease;
@@ -2193,9 +2192,7 @@ html[data-theme="light"] .theme-toggle .sun-icon {
 }
 
 html, body {
-    overflow-x: hidden !important;
     width: 100% !important;
-    max-width: 100vw !important;
     position: relative;
 }
 
