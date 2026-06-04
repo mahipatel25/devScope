@@ -106,7 +106,7 @@ body {
 }
 
 .blob-glow-1 {
-    width: 500px;
+    width: 50vw; max-width: 500px;
     height: 500px;
     top: -150px;
     left: -150px;
@@ -115,7 +115,7 @@ body {
 }
 
 .blob-glow-2 {
-    width: 600px;
+    width: 60vw; max-width: 600px;
     height: 600px;
     bottom: -100px;
     right: -100px;
@@ -124,7 +124,7 @@ body {
 }
 
 .blob-glow-3 {
-    width: 400px;
+    width: 40vw; max-width: 400px;
     height: 400px;
     top: 30%;
     left: 45%;
@@ -240,7 +240,35 @@ button {
 .nav-actions {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: 0.75rem;
+}
+
+/* Home Button */
+.nav-home-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-header);
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    background: var(--bg-tertiary);
+    border: 1px solid var(--glass-border);
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    transition: var(--transition-quick);
+}
+
+.nav-home-btn:hover {
+    background: var(--glass-bg);
+    border-color: var(--accent-purple);
+    color: var(--accent-purple);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.1);
+}
+
+.nav-home-btn i {
+    font-size: 1rem;
 }
 
 /* Theme Toggle Slider */
@@ -360,7 +388,7 @@ html[data-theme="light"] .theme-toggle .sun-icon {
 .search-wrapper {
     position: relative;
     width: 100%;
-    max-width: 600px;
+    max-width: 60vw; max-width: 600px;
     margin: 0.5rem auto;
 }
 
@@ -497,7 +525,7 @@ html[data-theme="light"] .theme-toggle .sun-icon {
     align-items: center;
     gap: 0.75rem;
     width: 100%;
-    max-width: 600px;
+    max-width: 60vw; max-width: 600px;
     animation: fade-in-up 0.5s ease;
 }
 
@@ -598,7 +626,7 @@ html[data-theme="light"] .theme-toggle .sun-icon {
     align-items: center;
     gap: 1.5rem;
     box-shadow: var(--card-shadow);
-    max-width: 500px;
+    max-width: 50vw; max-width: 500px;
     margin: 0 auto;
     text-align: center;
     animation: fade-in-up 0.6s ease;
@@ -664,21 +692,17 @@ html[data-theme="light"] .theme-toggle .sun-icon {
     padding: 0.4rem 1rem;
     font-size: 0.85rem;
     font-weight: 600;
-    transition: var(--transition-quick);
+    transition: color var(--transition-quick);
 }
 
 .suggest-chip-btn:hover {
-    background: var(--accent-purple);
-    border-color: var(--accent-purple);
-    color: #ffffff;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+    color: var(--accent-purple);
 }
 
 /* Stylish Error Card with Glitch/Cyber Styling */
 .error-card-wrapper {
     position: relative;
-    max-width: 500px;
+    max-width: 50vw; max-width: 500px;
     margin: 2rem auto;
 }
 
@@ -1409,7 +1433,7 @@ html[data-theme="light"] .theme-toggle .sun-icon {
     }
     
     .profile-card {
-        max-width: 600px;
+        max-width: 60vw; max-width: 600px;
         margin: 0 auto;
         width: 100%;
     }
@@ -1510,7 +1534,7 @@ html[data-theme="light"] .theme-toggle .sun-icon {
     border-radius: 20px;
     padding: 1.25rem 1.5rem;
     width: 100%;
-    max-width: 600px;
+    max-width: 60vw; max-width: 600px;
     margin-top: 1rem;
     animation: fade-in-up 0.5s ease;
     box-shadow: var(--card-shadow);
@@ -1942,7 +1966,8 @@ html[data-theme="light"] .theme-toggle .sun-icon {
 }
 
 .heatmap-wrapper {
-    min-width: 710px;
+    width: 100%;
+    overflow-x: auto;
     display: flex;
     flex-direction: column;
     gap: 0.4rem;
@@ -2077,7 +2102,7 @@ html[data-theme="light"] .theme-toggle .sun-icon {
 .repo-search-wrapper {
     position: relative;
     flex: 1;
-    min-width: 240px;
+    width: 100%;
     max-width: 320px;
     text-align: left;
 }
@@ -2150,3 +2175,99 @@ html[data-theme="light"] .theme-toggle .sun-icon {
     font-size: 0.7rem;
 }
 
+
+/* -------------------------------------------------------------
+ * EXTENDED RESPONSIVE FIXES
+ * ------------------------------------------------------------- */
+/* Global flex-wrap for containers */
+.history-chips, .favorites-chips, .suggest-chips, .stats-grid, .repos-controls-bar, .controls-selects {
+    flex-wrap: wrap !important;
+}
+
+/* Ensure no elements overflow */
+* {
+    max-width: 100%;
+}
+
+@media (max-width: 768px) {
+    /* Stack filter controls vertically */
+    .repos-controls-bar {
+        flex-direction: column !important;
+        align-items: stretch !important;
+    }
+    
+    .controls-selects {
+        flex-direction: column !important;
+        width: 100% !important;
+        gap: 1rem !important;
+    }
+    
+    .filter-controls-wrapper, .sort-controls-wrapper {
+        width: 100% !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+    }
+    
+    .repo-search-wrapper {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    .search-wrapper, .search-form {
+        width: 100% !important;
+    }
+    
+    .input-icon-wrapper {
+        width: 100% !important;
+    }
+    
+    .search-form {
+        flex-wrap: wrap !important;
+    }
+    
+    .search-btn {
+        width: 100% !important;
+        justify-content: center !important;
+        margin-top: 0.5rem !important;
+    }
+
+    /* Cards use 100% width */
+    .repo-card {
+        width: 100% !important;
+    }
+    
+    .repos-grid {
+        grid-template-columns: 1fr !important;
+    }
+    
+    /* Allow heatmap to scroll internally to avoid page overflow */
+    .heatmap-wrapper {
+        overflow-x: auto !important;
+        width: 100% !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-container {
+        flex-direction: column !important;
+        gap: 1rem !important;
+    }
+    
+    .hero-title {
+        font-size: 1.5rem !important;
+    }
+    
+    .empty-state-card, .error-card {
+        padding: 1.5rem 1rem !important;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr !important;
+    }
+    
+    /* Cards use 100% width */
+    .profile-sidebar-wrapper, .repos-main-wrapper, .contribution-card, .stats-card {
+        width: 100% !important;
+        padding: 1rem !important;
+    }
+}
