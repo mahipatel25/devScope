@@ -6,7 +6,7 @@ DevScope is a modern API Integration web application designed to simplify API te
 
 Built with a focus on performance, responsiveness, and developer experience, DevScope demonstrates how modern web applications can integrate third-party APIs seamlessly. README files are commonly used to explain a project's purpose, features, setup, and usage for developers and users.
 
-✨ Features
+✨ Features : 
 
 🔗 API Integration with external services
 
@@ -22,7 +22,7 @@ Built with a focus on performance, responsiveness, and developer experience, Dev
 
 🌙 Clean user experience across devices
 
-🛠️ Technologies Used
+🛠️ Technologies Used - 
 
 HTML5
 
@@ -34,7 +34,7 @@ REST APIs
 
 Fetch API
 
-📂 Project Structure
+📂 Project Structure - 
 
 DevScope/
 │
@@ -59,7 +59,7 @@ Open the Project -
 
 Simply open index.html in your browser.
 
-💡 How It Works
+💡 How It Works : 
 
 User enters the required input.
 Application sends a request to the integrated API.
