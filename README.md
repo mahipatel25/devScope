@@ -1,4 +1,5 @@
 DevScope – API Integration Platform
+
 🚀 Overview
 
 DevScope is a modern API Integration web application designed to simplify API testing, data retrieval, and real-time interaction with external services. The platform provides a clean and user-friendly interface that allows users to connect APIs, fetch data, and visualize responses efficiently.
@@ -23,6 +24,7 @@ REST APIs
 Fetch API
 
 📂 Project Structure
+
 DevScope/
 │
 ├── index.html
@@ -32,14 +34,17 @@ DevScope/
 └── README.md
 
 🚀 Getting Started
-Clone the Repository
+
+Clone the Repository :
+
 git clone https://github.com/mahipatel25/devscope.git
 
-Open the Project
+Open the Project - 
 
 Simply open index.html in your browser.
 
 💡 How It Works
+
 User enters the required input.
 Application sends a request to the integrated API.
 API returns data.
