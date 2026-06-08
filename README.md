@@ -9,6 +9,7 @@ Built with a focus on performance, responsiveness, and developer experience, Dev
 ✨ Features : 
 
 
+
 🔗 API Integration with external services
 
 ⚡ Real-time data fetching
@@ -24,6 +25,7 @@ Built with a focus on performance, responsiveness, and developer experience, Dev
 🌙 Clean user experience across devices
 
 
+
 🛠️ Technologies Used - 
 
 HTML5
@@ -35,6 +37,7 @@ JavaScript (ES6+)
 REST APIs
 
 Fetch API
+
 
 📂 Project Structure - 
 
@@ -51,6 +54,7 @@ DevScope/
 
 └── README.md
 
+
 🚀 Getting Started
 
 Clone the Repository :
@@ -61,6 +65,7 @@ Open the Project -
 
 Simply open index.html in your browser.
 
+
 💡 How It Works : 
 
 User enters the required input.
@@ -69,9 +74,11 @@ API returns data.
 DevScope processes and displays the response in a user-friendly format.
 Errors are handled gracefully with clear feedback messages.
 
+
 🎯 Purpose
 
 The primary goal of DevScope is to demonstrate practical API integration techniques while providing an interactive and responsive web experience. It serves as a learning project for understanding how front-end applications communicate with external services through APIs.
+
 
 📱 Responsive Design
 
@@ -82,6 +89,7 @@ Desktop 💻
 Tablet 📱
 
 Mobile Devices 📲
+
 
 👨‍💻 Author
 
