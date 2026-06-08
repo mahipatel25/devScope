@@ -6,6 +6,7 @@ DevScope is a modern API Integration web application designed to simplify API te
 Built with a focus on performance, responsiveness, and developer experience, DevScope demonstrates how modern web applications can integrate third-party APIs seamlessly. README files are commonly used to explain a project's purpose, features, setup, and usage for developers and users.
 
 ✨ Features
+
 🔗 API Integration with external services
 ⚡ Real-time data fetching
 📱 Fully responsive design
@@ -13,12 +14,14 @@ Built with a focus on performance, responsiveness, and developer experience, Dev
 🔍 Error handling and validation
 🚀 Fast and optimized performance
 🌙 Clean user experience across devices
+
 🛠️ Technologies Used
 HTML5
 CSS3
 JavaScript (ES6+)
 REST APIs
 Fetch API
+
 📂 Project Structure
 DevScope/
 │
@@ -27,9 +30,11 @@ DevScope/
 ├── script.js
 ├── assets/
 └── README.md
+
 🚀 Getting Started
 Clone the Repository
-git clone https://github.com/yourusername/devscope.git
+git clone https://github.com/mahipatel25/devscope.git
+
 Open the Project
 
 Simply open index.html in your browser.
@@ -40,6 +45,7 @@ Application sends a request to the integrated API.
 API returns data.
 DevScope processes and displays the response in a user-friendly format.
 Errors are handled gracefully with clear feedback messages.
+
 🎯 Purpose
 
 The primary goal of DevScope is to demonstrate practical API integration techniques while providing an interactive and responsive web experience. It serves as a learning project for understanding how front-end applications communicate with external services through APIs.
