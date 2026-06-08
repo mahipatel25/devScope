@@ -8,6 +8,7 @@ Built with a focus on performance, responsiveness, and developer experience, Dev
 
 ✨ Features : 
 
+
 🔗 API Integration with external services
 
 ⚡ Real-time data fetching
@@ -21,6 +22,7 @@ Built with a focus on performance, responsiveness, and developer experience, Dev
 🚀 Fast and optimized performance
 
 🌙 Clean user experience across devices
+
 
 🛠️ Technologies Used - 
 
