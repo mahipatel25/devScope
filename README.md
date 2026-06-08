@@ -25,19 +25,28 @@ Built with a focus on performance, responsiveness, and developer experience, Dev
 🛠️ Technologies Used
 
 HTML5
+
 CSS3
+
 JavaScript (ES6+)
+
 REST APIs
+
 Fetch API
 
 📂 Project Structure
 
 DevScope/
 │
+
 ├── index.html
+
 ├── style.css
+
 ├── script.js
+
 ├── assets/
+
 └── README.md
 
 🚀 Getting Started
