@@ -9,14 +9,21 @@ Built with a focus on performance, responsiveness, and developer experience, Dev
 ✨ Features
 
 🔗 API Integration with external services
+
 ⚡ Real-time data fetching
+
 📱 Fully responsive design
+
 🎨 Modern and intuitive user interface
+
 🔍 Error handling and validation
+
 🚀 Fast and optimized performance
+
 🌙 Clean user experience across devices
 
 🛠️ Technologies Used
+
 HTML5
 CSS3
 JavaScript (ES6+)
@@ -60,8 +67,11 @@ The primary goal of DevScope is to demonstrate practical API integration techniq
 DevScope is optimized for:
 
 Desktop 💻
+
 Tablet 📱
+
 Mobile Devices 📲
+
 👨‍💻 Author
 
 Mahi Patel
